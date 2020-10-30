@@ -1,0 +1,83 @@
+div.input-tags-wrapper {
+    border: 1px solid #c0c0c0;
+    border-radius: 0.2rem;
+    padding: 0.4rem 0.7rem;
+    div.input-tags-header {
+        h4.input-tags-title {
+            font-size: 1rem;
+            color: #747474;
+            font-weight: normal;
+        }
+    }
+    div.input-tags-container {
+        display: flex;
+        justify-content: space-between;
+        ul.ul-tag-content {
+            width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0; 
+            cursor: text;
+            li.tag-item {
+                display: inline-block;
+                margin: 0.2rem;
+                background-color: #f0f0f0;
+                padding: 0.1rem 0.4rem;
+                border-radius: 1rem;
+                font-size: 0.9rem;
+                &.input {
+                    background-color: transparent;
+                    padding: 0;
+                    margin: 0;
+                    input {
+                        border: none;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+                div.tag-item-content {
+                    display: flex;
+                    align-items: center;
+                    span.tag-item-text {
+                        outline: none;
+                    }
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    i.tag-item-action {
+                        font-size: 0.8em;
+                        background-color: #747474;
+                        width: 16px;
+                        height: 16px;
+                        text-align: center;
+                        line-height: 16px;
+                        border-radius: 50%;
+                        color: #fff;
+                        margin-left: 0.3rem;
+                        &:hover {
+                            background-color: #474747;
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: #e0e0e0;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        div.tag-content-action {
+            width: 64px;
+            color: #747474;
+            i {
+                cursor: pointer;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,34 @@
+<div class="input-tags-wrapper"  [ngClass]="isFocusIn ? 'border-primary' : ''">
+    <div class="input-tags-header">
+        <h4 class="input-tags-title" [ngClass]="isFocusIn ? 'text-primary' : ''">Tag</h4>
+    </div>
+    <div class="input-tags-container">
+        <ul class="ul-tag-content" (click)="handleClickUlTagContent(inputTag)">
+            <li class="tag-item" 
+                *ngFor="let tag of tag.requestValues; let i = index" 
+                (click)="handleClickTagItem($event)">
+                <div class="tag-item-content">
+                    <span class="tag-item-text" contenteditable (focusout)="handleFocusOutTagInside($event, i)">{{ tag }}</span>
+                    <i class="fas fa-times tag-item-action" title="Hapus" (click)="handleRemoveTag(i)"></i>
+                </div>
+            </li>
+            <li class="tag-item input">
+                <input #inputTag 
+                    type="text" 
+                    [attr.size]="tag.requestValues.length === 0 ? placeholder.length : 1" 
+                    (keyup.enter)="handleEnter($event)" 
+                    (keyup.backspace)="handleBackspace($event)"
+                    (input)="handleInput($event)"
+                    (focusin)="handleFocusIn()"
+                    (focusout)="handleFocusOut($event)"
+                    (paste)="handlePaste($event)"
+                    [attr.placeholder]="tag.requestValues.length === 0 ? placeholder : ''"
+                    >
+            </li>
+        </ul>
+        <div class="tag-content-action">
+            <i class="far fa-clone mr-2" title="Salin Semua" (click)="handleCopyTags()"></i>
+            <i class="fas fa-times ml-2" title="Hapus Semua" (click)="handleDeleteAll(inputTag)"></i>
+        </div>
+    </div>
+</div>
